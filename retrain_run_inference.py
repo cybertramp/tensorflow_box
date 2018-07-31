@@ -3,9 +3,9 @@
 import numpy as np
 import tensorflow as tf
 
-imagePath = 'test.jpg'                                      # 추론을 진행할 이미지 경로
-modelFullPath = '/tmp/output_graph.pb'                       # 읽어들일 graph 파일 경로
-labelsFullPath = '/tmp/output_labels.txt'                         # 읽어들일 labels 파일 경로
+imagePath = 'test.jpg'
+modelFullPath = '/tmp/output_graph.pb'
+labelsFullPath = '/tmp/output_labels.txt'
 
 def run_inference_on_image():
     answer = None
@@ -37,9 +37,9 @@ def run_inference_on_image():
             print('%s (score = %.5f)' % (human_string, score))
             if 'car' in human_string:
                 if score > 0.7:
-                    print('자동차 사진입니다.')
-                else
-                    print('자동차 사진이 아닙니다.'')
+                    print('This image contains a car!')
+                else:
+                    print('This image does not include a car.')
         answer = labels[top_k[0]]
         return answer
 
