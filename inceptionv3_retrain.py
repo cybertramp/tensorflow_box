@@ -894,7 +894,7 @@ if __name__ == '__main__':
       '--summaries_dir',
       type=str,
       default='retrain_logs',
-      help='Where to save summary logs for TensorBoard.'
+      help='Where to save summary logs for TensorBoard.'
   )
   parser.add_argument(
       '--how_many_training_steps',
