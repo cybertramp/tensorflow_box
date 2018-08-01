@@ -3,7 +3,7 @@
 import numpy as np
 import tensorflow as tf
 
-imagePath = 'tensorflow_box-master/test1.jpg'
+imagePath = 'tensorflow_box-master/test3.jpg'
 modelFullPath = '/tmp/output_graph.pb'
 labelsFullPath = '/tmp/output_labels.txt'
 
@@ -30,8 +30,8 @@ with tf.Session() as sess:
         labels_name = labels[node_id]
         score = predictions[node_id]*100
         if 'pos' in labels_name:
-            if score > 0.7:
+            if score > 70:
                 print('This image include a car!')
             else:
                 print('This image does not include a car.')
-            print('score : %.5f / 100'%score)
+ 
