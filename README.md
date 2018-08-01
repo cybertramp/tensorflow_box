@@ -1,4 +1,6 @@
 # tensorflow_box
+This repo used in google inception v3.
+
 Check image Car or not Car!
 =========================
 - car pos images : 104
