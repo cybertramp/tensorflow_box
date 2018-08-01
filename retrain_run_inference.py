@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
+# Prediction input file with learning data
 
 import numpy as np
 import tensorflow as tf
 
-imagePath = 'test.jpg'
+imagePath = 'tensorflow_box-master/test1.jpg'
 modelFullPath = '/tmp/output_graph.pb'
 labelsFullPath = '/tmp/output_labels.txt'
 
@@ -32,15 +32,14 @@ def run_inference_on_image():
         lines = f.readlines()
         labels = [str(w).replace("\n", "") for w in lines]
         for node_id in top_k:
-            human_string = labels[node_id]
+            labels_name = labels[node_id]
             score = predictions[node_id]
-            print('%s (score = %.5f)' % (human_string, score))
-            if 'car' in human_string:
+            print('%s (score = %.5f)' % (labels_name, score))
+            if 'pos' in labels_name:
                 if score > 0.7:
-                    print('This image contains a car!')
+                    print('This image include a car!')
                 else:
                     print('This image does not include a car.')
-        answer = labels[top_k[0]]
-        return answer
+        return labels[top_k[0]]
 
 run_inference_on_image()
