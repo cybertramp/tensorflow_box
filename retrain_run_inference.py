@@ -2,13 +2,18 @@
 
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 imagePath = 'tensorflow_box-master/test3.jpg'
 modelFullPath = '/tmp/output_graph.pb'
 labelsFullPath = '/tmp/output_labels.txt'
 
+# Show input image
+%matplotlib inline
+image = plt.imread(imagePath)
+plt.imshow(image)
+plt.grid(False)
 answer = None
-
 image_data = tf.gfile.FastGFile(imagePath, 'rb').read()
 
 with tf.gfile.FastGFile(modelFullPath, 'rb') as f:
@@ -31,7 +36,7 @@ with tf.Session() as sess:
         score = predictions[node_id]*100
         if 'pos' in labels_name:
             if score > 70:
-                print('This image include a car!')
+                print("This image include a car!")
             else:
-                print('This image does not include a car.')
+                print("This image does not include a car.")
  
