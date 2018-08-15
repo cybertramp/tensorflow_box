@@ -14,6 +14,7 @@ Check image Car or not Car!
 =========================
 
 Jupyter-notebook, google colab, zepl zepplein에서 동작을 확인하였습니다.
+사용된 google inception v3 부분은 https://gist.github.com/solaris33/inceptionv3_retrain.py 의 파일을 가져와 적용하였습니다.
 
 This source working on Colab.
 run notebook code https://colab.research.google.com/drive/1QWH19ek4XPCokdnqx17_RCwMlcx_zaUl
