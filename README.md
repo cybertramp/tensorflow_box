@@ -8,6 +8,7 @@ Check image Car or not Car!
 - car pos images : 104
 - car neg images : 43
 - Test images : 5
+
 =========================
 
 Jupyter-notebook, google colab, zepl zepplein에서 동작을 확인하였습니다.
